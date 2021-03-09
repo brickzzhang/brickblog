@@ -2,6 +2,7 @@
 title: "Start MySQL from Docker"
 date: 2021-02-19T16:39:33+08:00
 draft: false
+weight: 2
 ---
 
 ## 从docker启动MySQL命令
