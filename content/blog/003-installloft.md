@@ -5,6 +5,10 @@ draft: false
 weight: 3
 ---
 
+使用loft管理k8s集群。
+
+<!--more-->
+
 ## 安装loft管理k8s集群
 
 ### 安装命令

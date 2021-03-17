@@ -5,6 +5,10 @@ draft: false
 weight: 2
 ---
 
+从docker启动MySQL命令。
+
+<!--more-->
+
 ## 从docker启动MySQL命令
 
 ```shell

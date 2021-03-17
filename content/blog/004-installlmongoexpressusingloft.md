@@ -5,6 +5,10 @@ draft: false
 weight: 4
 ---
 
+本文为使用loft安装mongo和mongo-express的实践。
+
+<!--more-->
+
 ## 使用loft安装mongo
 
 1. 启动loft
