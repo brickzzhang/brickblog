@@ -2,6 +2,7 @@
 title: "基于alpine镜像制作go和goimports的Docker镜像"
 date: 2021-06-01T16:58:04+08:00
 draft: false
+weight: 11
 ---
 
 基于alpine制作go docker镜像

@@ -2,6 +2,7 @@
 title: "构建Docker镜像"
 date: 2021-05-31T11:21:07+08:00
 draft: false
+weight: 10
 ---
 
 创建docker镜像过程
