@@ -42,8 +42,9 @@ func longTimeTask(ctx context.Context, c chan Result) {
 }
 
 func doWithTimeout(ctx context.Context) {
+	// extract values from old ctx
 	// init a new timeout context
-	ctxOut, cancel := context.WithTimeout(ctx, 5*time.Second)
+	ctxOut, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
 	c := make(chan Result)
@@ -96,7 +97,15 @@ func main() {
 ```
 
 ## 简单说明
-1. doWithTimeout函数开始切记需要创建新的context
+1. doWithTimeout函数开始切记需要用Background初始化新的context，否则如果父ctx设置的超时时间比子ctx设置的小，将会以父ctx设置的时间为准：
+```go
+// WithDeadline returns a copy of the parent context with the deadline adjusted
+// to be no later than d. If the parent's deadline is already earlier than d,
+// WithDeadline(parent, d) is semantically equivalent to parent. The returned
+// context's Done channel is closed when the deadline expires, when the returned
+// cancel function is called, or when the parent context's Done channel is
+// closed, whichever happens first.
+```
 2. doWithTimeout使用select阻塞获取超时或者任务返回的结果
 3. doWithTimeout和longTimeTask通过第二个channel参数进行结果传递
 4. longTimeTask函数只负责产生结果，将结果处理逻辑放到doWithTimeout中
